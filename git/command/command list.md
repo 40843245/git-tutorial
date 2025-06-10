@@ -1,9 +1,60 @@
 # git
 ## command
-### configuration
-#### `cofig`
+### look at version of git
+#### `git -v`
 
-+ To view git configuration type
++ To look at version of git
+
+```
+git -v
+```
+
+### open the document of specific command
+
++ To open the document of specific command
+
+```
+git help <command-name>
+```
+
+where 
+
+`<command-name>` is the git command you want to know its info,
+
+such as `clone`
+
+### initialize the local repo
+
+When you want to do git control on the specific directory in local device.
+
+Please change directory to desired directory in Git Terminal.
+
+Then initialize the local repo with following command 
+
+```
+git init
+```
+
+### clone from remote repo
+#### `clone`
+
++ To clone from remote repo to local repo
+
+```
+git clone <remote-repo-url>
+```
+
+where
+
+`<remote-repo-url>` is the url of remote repo
+
+such as `https://github.com/40843245/git-tutorial.git`
+
+###
+### configuration
+#### `config`
+
++ To view git configuration
 
 ```
 git config --list
