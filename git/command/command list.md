@@ -40,7 +40,7 @@ where
 git help checkout
 ```
 
-will open the document about `checkout` `C:/../../Git/mingw64/share/doc/git-doc/git-checkout.html` to look at info of `checkout` command.
+will open the document about `checkout` located at `C:/../../Git/mingw64/share/doc/git-doc/git-checkout.html` to look at info of `checkout` command.
 
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/2e87f335-3596-4d49-a92c-0d14bfe67edf" />
 
@@ -114,14 +114,152 @@ git branch main-backup
 git branch main-backup main
 ```
 
-### copy a remote branch to a local branch
+##### reference
++ [Google Gemini's response -- How to copy branch with git command?](https://g.co/gemini/share/8e93564e75bd)
 
-+ To copy a remote branch `remote-main` from  to a local branch `local-main-backup`,
+### copy current local branch to a local branch and switch to the new created branch
+#### `checkout --track` or `checkout -b`
+
+`-b` is shorten for `--track`.
+
+`git checkout` command NOT ONLY can switch branches (without `--track` and `-b` flags) 
+
+BUT ALSO can copy current local branch to a local branch and switch to the new created branch (with one of `--track` or `-b` flags)
+
++ To copy current local branch `main` to a local branch `new-local-branch` and switch to the new created branch (here is `new-local-branch`)
+
+```
+git checkout --track new-local-branch # creates and switches to a new 'new-local-branch' branch
+```
+
+or
+
+```
+git checkout -b new-local-branch # creates and switches to a new 'new-local-branch' branch
+```
+
+##### reference
++ [Google Gemini's response -- How to copy branch with git command?](https://g.co/gemini/share/8e93564e75bd)
+
+### copy a remote branch to a local branch
+#### `checkout --track` or `checkout -b`
++ To copy a remote branch `remote-main` in remote repo `origin` to a local branch `local-main-backup`,
 
 ```
 git checkout -b new-local-branch origin/remote-branch
 ```
 
+or 
+
+```
+git checkout --track new-local-branch origin/remote-branch
+```
+
+explanation:
+
+    - `git checkout` is used to switch branch.  
+    - `-b` is shorten for `--track` which used to create a new branch from remote branch in a remote repo.
+    - thus, `-b new-local-branch` is used to create a new branch named `new-local-branch`.
+    - `origin/remote-branch` indicates copy a remote branch `remote-branch` in a remote repo named `origin`.
+
+##### reference
++ [Google Gemini's response -- What does it mean? `git checkout -b new-local-branch origin/remote-branch`](https://g.co/gemini/share/4cfdbc0c97bd)
+
+### copy a new local branch from a specific commit
+#### `branch`
++ To copy a new local branch `new-branch` from a specific commit,
+
+we need to find the old-SHA of the commit, then type
+
+```
+git branch new-branch <commit-sha>
+```
+
+where 
+
+`<commit-sha>` is the old-SHA of the commit.
+
+### stage one or more specific files
+#### `add`
+You can use `git add` followed file name (with regex rule) to stage one or more specific files that matches the files with given regex.
+
+The regex rule is same as that of command in Windows Terminal.
+
++ To stage `words.txt`
+
+```
+git add words.txt
+```
+
++ To stage all changes in the current directory
+
+```
+git add .
+```
+
++ To stage all changes (new, modified, and deleted tracked files)
+
+```
+git add -A
+```
+
++ To stage all files that ends with `.txt`
+
+```
+git add "*.txt"
+```
+
++ To stage all modified and deleted tracked files (but not new, untracked files)
+
+```
+git add -u
+```
+
+### commit the staged files
+#### `commit`
+
++ To commit the staged files with commit description `rename CH2 to CH3`
+
+```
+git commit -m "rename CH2 to CH3"
+```
+
+here `-m` flag means the commit description.
+
++ To commit the staged files
+
+```
+git commit
+```
+
+however, git command line will prompt the user to enter the commit description.
+
++ To stages all changes to tracked files (modified and deleted files) and commit with commit description `Implement user authentication with JWT`,
+
+there is a shortcut command.
+
+```
+git commit --all -m "Implement user authentication with JWT"
+```
+
+or 
+
+```
+git commit -a -m "Implement user authentication with JWT"
+```
+
+or even shorter
+
+```
+git commit -am "Implement user authentication with JWT"
+```
+
+explanation:
+
+`--all` or `-a` in `git commit` indicates that it will stages all changes to tracked files (modified and deleted files) before committing.
+
+##### reference
++ [Google Gemin's response -- How to commit the file changes with git command?](https://g.co/gemini/share/5239566aa5af)
 ### configuration
 #### `config`
 
