@@ -9,9 +9,9 @@
 git -v
 ```
 
-### open the document of specific command
+### look at specific command
 
-+ To open the document of specific command
++ To open the document to look at specific command
 
 ```
 git help <command-name>
@@ -22,6 +22,37 @@ where
 `<command-name>` is the git command you want to know its info,
 
 such as `clone`
+
++ To print the info of specific command on git command line
+
+```
+git help <flag>
+``` 
+
+where 
+
+`<flag>` are one or more flag which is available .
+
+##### examples
+###### example 1
+
+```
+git help checkout
+```
+
+will open the document about `checkout` `C:/../../Git/mingw64/share/doc/git-doc/git-checkout.html` to look at info of `checkout` command.
+
+<img width="880" alt="image" src="https://github.com/user-attachments/assets/2e87f335-3596-4d49-a92c-0d14bfe67edf" />
+
+###### example 2
+
+```
+git help -a
+```
+
+will print info of all commands on git command line
+
+<img width="455" alt="image" src="https://github.com/user-attachments/assets/15ad2621-a2e6-4041-8017-2df4ac497082" />
 
 ### initialize the local repo
 
@@ -35,7 +66,7 @@ Then initialize the local repo with following command
 git init
 ```
 
-### clone from remote repo
+### clone from remote repo to local repo
 #### `clone`
 
 + To clone from remote repo to local repo
@@ -50,7 +81,47 @@ where
 
 such as `https://github.com/40843245/git-tutorial.git`
 
-###
+### switch branch
+#### `checkout`
++ To switch current branch `main` to `main-backup` branch,
+
+I can type
+
+```
+git checkout main-backup
+```
+
+### copy a local branch to new local branch
+#### `branch`
+
++ To copy a local branch `main` to new local branch `main-backup`,
+
+we have to switch current branch to `main` branch (if current branch is NOT `main`)
+
+```
+git checkout main
+```
+
+and copy a new branch `main-backup`
+
+```
+git branch main-backup
+```
+
++ it can even be shorten as
+
+```
+git branch main-backup main
+```
+
+### copy a remote branch to a local branch
+
++ To copy a remote branch `remote-main` from  to a local branch `local-main-backup`,
+
+```
+git checkout -b new-local-branch origin/remote-branch
+```
+
 ### configuration
 #### `config`
 
