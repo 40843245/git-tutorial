@@ -215,6 +215,57 @@ git add "*.txt"
 git add -u
 ```
 
+### unstage one or more specific files
+#### `restore --staged`
+`git restore --staged` is the cleanest way to unstage the files.
+
++ To unstage one file named `words.txt`
+
+```
+git restore --staged words.txt
+```
+
++ To unstage all staged files
+
+```
+git restore --staged .
+```
+
+or
+
+```
+git restore --staged --worktree
+```
+
+##### reference
++ [Google Gemini's response -- How to unstage a file with git command?](https://g.co/gemini/share/ccc035f7447c)
+
+#### `reset`
+Although `git reset` can unstage files, it have boarder usage so that you sometimes are confused.
+
+Therefore, I don't recommend to use it.
+
++ To unstage one file named `words.txt`
+
+```
+git reset HEAD words.txt
+```
+
++ To unstage all staged files
+  
+```
+git reset
+```
+
+or
+
+```
+git reset HEAD
+```
+
+##### reference
++ [Google Gemini's response -- How to unstage a file with git command?](https://g.co/gemini/share/ccc035f7447c)
+  
 ### commit the staged files
 #### `commit`
 
