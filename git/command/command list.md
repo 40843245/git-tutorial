@@ -478,6 +478,10 @@ For example, it may print
 
 <img width="425" alt="image" src="https://github.com/user-attachments/assets/249953a2-2c6a-43fc-963c-46a1607f82f3" />
 
+##### reference
++ [Google Gemini's response -- `git log`](https://g.co/gemini/share/ee46ccc9b2ad)
++ [Google Gemini's response -- What does the output of `git log` stands for?](https://g.co/gemini/share/1a063de40631)
+
 ### configuration
 #### `config`
 
