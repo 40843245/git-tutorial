@@ -312,9 +312,9 @@ explanation:
 ##### reference
 + [Google Gemin's response -- How to commit the file changes with git command?](https://g.co/gemini/share/5239566aa5af)
 
-### show changes where your `HEAD` or branch pointers are pointing
+### show changes where your `HEAD` or branch pointers are pointing of local repo
 #### `reflog`
-+ To show changes where your `HEAD` or branch pointers are pointing
++ To show changes where your `HEAD` or branch pointers are pointing of local repo
 
 ```
 git reflog show HEAD
@@ -353,6 +353,19 @@ a1b2c3d HEAD@{0}: commit: Add new feature X
 e4f5g6h HEAD@{1}: checkout: moving from main to feature/X
 i7j8k9l HEAD@{2}: commit (initial): Initial commit
 ```
+
+##### restrictions
+It can **only** be used for local repo. 
+
+It will not show changes where your `HEAD` or branch pointers are pointing for a shared repo and a remote repo etc
+
+##### Remarks
+1. These entries have an expiration time
+   
+   - by default, 90 days for reachable entries
+   - by default, 30 days for unreachable ones
+
+After an entry expires, it will be freed (or pruned) by garbage collection in Git (`git gc`)
 
 ##### reference
 + [Google Gemini's response -- How to show tracking of commit?](https://g.co/gemini/share/6db04d2667d4)
