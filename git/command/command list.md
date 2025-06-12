@@ -311,6 +311,53 @@ explanation:
 
 ##### reference
 + [Google Gemin's response -- How to commit the file changes with git command?](https://g.co/gemini/share/5239566aa5af)
+
+### show changes where your `HEAD` or branch pointers are pointing
+#### `reflog`
++ To show changes where your `HEAD` or branch pointers are pointing
+
+```
+git reflog show HEAD
+```
+
+or can be shorter
+
+```
+git reflog show
+```
+
+or even shorter
+
+```
+git reflog
+```
+
+It will print the info of every actions that changes where your HEAD or branch pointers are pointing. Including these info
+
+    - action's type: such as `commit`, `checkout`
+    - description of the action
+    - old-SHA of the action
+    - enrty's id
+
+the format of output will be
+
+```
+<old-SHA> <enrty's id> <type> <description>
+```
+
+for example, it may print
+
+```
+# <old-SHA> <enrty's id> <type> <description>
+a1b2c3d HEAD@{0}: commit: Add new feature X
+e4f5g6h HEAD@{1}: checkout: moving from main to feature/X
+i7j8k9l HEAD@{2}: commit (initial): Initial commit
+```
+
+##### reference
++ [Google Gemini's response -- How to show tracking of commit?](https://g.co/gemini/share/6db04d2667d4)
++ [Google Gemini's response -- git reflog show](https://g.co/gemini/share/c8a6596507f0)
+
 ### configuration
 #### `config`
 
