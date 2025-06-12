@@ -283,7 +283,17 @@ here `-m` flag means the commit description.
 git commit
 ```
 
-however, git command line will prompt the user to enter the commit description.
+however, git command line will open `~/.git/COMMIT_EDITMSG` file (which is a **hidden** file so that by default it can NOT seen in `File Explorer`)
+
+and prompts user to fill the commit description in the **first line**.
+
+<img width="911" alt="image" src="https://github.com/user-attachments/assets/22510c2f-ec95-4ab4-8ebb-8ab370d74c6a" />
+
+after filling, closing the file to try to commit.
+
+Then, if the commit is success, then you will see the entry info followed by commit description and a successful message.
+
+<img width="262" alt="image" src="https://github.com/user-attachments/assets/36a22144-f09e-4c50-9b91-f3769643c02f" />
 
 + To stages all changes to tracked files (modified and deleted files) and commit with commit description `Implement user authentication with JWT`,
 
@@ -308,6 +318,29 @@ git commit -am "Implement user authentication with JWT"
 explanation:
 
 `--all` or `-a` in `git commit` indicates that it will stages all changes to tracked files (modified and deleted files) before committing.
+
+##### Remarks
+1. By default, in `~/.git/COMMIT_EDITMSG` file, it will look like this
+ 
+```
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   git-command-demo
+#
+# Changes not staged for commit:
+#	modified:   git-command-demo (untracked content)
+#
+```
+
+2. If user enters nothing (i.e. enters an empty string or string consist of whitespace or comments or both), then the commit will be aborted.
+3. a line will be considered as a comment if the line starts with `#`.
 
 ##### reference
 + [Google Gemin's response -- How to commit the file changes with git command?](https://g.co/gemini/share/5239566aa5af)
