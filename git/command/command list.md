@@ -375,17 +375,19 @@ It will print the info of every actions that changes where your HEAD or branch p
 the format of output will be
 
 ```
-<old-SHA> <enrty's id> <type> <description>
+<old-SHA> (<source-branch> -> <destination-branch>) <enrty's id> <type> <description>
 ```
 
-for example, it may print
+in Git Bash with current version of git (`git version 2.49.0.windows.1`).
+
+For example, it may print
 
 ```
-# <old-SHA> <enrty's id> <type> <description>
-a1b2c3d HEAD@{0}: commit: Add new feature X
-e4f5g6h HEAD@{1}: checkout: moving from main to feature/X
-i7j8k9l HEAD@{2}: commit (initial): Initial commit
+# <old-SHA> (<source-branch> -> <destination-branch>) <enrty's id> <type> <description>
+4bc70b5 (HEAD -> master) HEAD@{0}: commit (initial): First practice
 ```
+
+<img width="441" alt="image" src="https://github.com/user-attachments/assets/c0c1ec47-f020-435f-ad96-fb76b3cea80d" />
 
 ##### restrictions
 It can **only** be used for local repo. 
@@ -400,9 +402,81 @@ It will not show changes where your `HEAD` or branch pointers are pointing for a
 
 After an entry expires, it will be freed (or pruned) by garbage collection in Git (`git gc`)
 
+2. `git log` can look at (commit) history of local repo, but it prints with different format than `git reflog` (see `log` section)
+
+and there are slightly difference between their behavior.
+
+3. see above restrictions.
+   
 ##### reference
 + [Google Gemini's response -- How to show tracking of commit?](https://g.co/gemini/share/6db04d2667d4)
 + [Google Gemini's response -- git reflog show](https://g.co/gemini/share/c8a6596507f0)
+
+### show the commit history of a repository
+#### `log`
++ To show all commits history of a repository
+
+```
+git log
+```
+
+The format will be following
+
+```
+<type> <checksum of old-SHA> (<source-branch> -> <destination-branch>)
+Author: <username in Git settings> <<email address in Git settings>>
+Date:    <timestamp of commit> <its timezone offset>
+
+  <description>
+```
+
+where 
+
+`<timestamp of commit>` indicates the timestamp of commit was made (NOT the commit was sent).
+
+`<checksum of old-SHA>` indicates shortened `checksum of old-SHA`. You can think it as the hash of commit id.
+    
+NOTE:
+
+there is a `<>` to quote `<email address in Git settings>`
+
+
+For example, it may print
+
+```
+# <type> <checksum of old-SHA> (<source-branch> -> <destination-branch>)
+# Author: <username in Git settings> <<email address in Git settings>>
+# Date:    <timestamp of commit> <its timezone offset>
+#
+#    <description>
+commit 4bc70b566526cde604751c829a86be67c9cb25db (HEAD -> master)
+Author: jayhuang820
+Date:   Thu Jun 12 16:45:58 2025 +0800
+
+    First practice
+```
+<img width="434" alt="image" src="https://github.com/user-attachments/assets/eb2b9cdb-4107-4d34-b310-f07ae5ffd800" />
+
++ To show all commits history of a repository (each record is shorten to one line)
+
+```
+git log --online
+```
+
+The format will be following
+
+```
+<old-SHA> (<source-branch> -> <destination-branch>) <description>
+```
+
+For example, it may print
+
+```
+# <old-SHA> (<source-branch> -> <destination-branch>) <description>
+4bc70b5 (HEAD -> master) First practice
+```
+
+<img width="425" alt="image" src="https://github.com/user-attachments/assets/249953a2-2c6a-43fc-963c-46a1607f82f3" />
 
 ### configuration
 #### `config`
