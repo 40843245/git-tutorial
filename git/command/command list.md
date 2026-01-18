@@ -253,12 +253,6 @@ git restore --staged --worktree
 ```
 
 ### Remove tracked files
-+　To remove all tracked files,
-
-```
-git rm --cached -r
-```
-
 +　To remove all tracked specific files using regex,
 
 ```
@@ -266,6 +260,16 @@ git rm --cached -r <files-using-regex>
 ```
 
 It will remove tracked files that are matched by regex `<files-using-regex>`.
+
+`-r` means `recursive
+
+For example,
+
+```
+git rm --cached -r .
+```
+
+will remove all tracked files.
 
 ##### reference
 + [Google Gemini's response -- How to unstage a file with git command?](https://g.co/gemini/share/ccc035f7447c)
