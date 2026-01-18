@@ -476,6 +476,22 @@ explanation:
 git pull
 ```
 
+### fetch the lastest push history from remote repo
++ To fetch the lastest push history from remote repo
+
+```
+git fetch
+```
+
++ To fetch the lastest push history using upstream branches from remote repo
+
+specify `-u` short option or `--set-upstream` long option.
+
+> [!NOTE]
+> Its the default configuration
+>
+> which no option are used.
+
 ### push to remote
 ### remove all staged files
 + To remove all staged files.
@@ -496,15 +512,43 @@ git push origin <remote-branch-to-push> <commits>
 
 `<commit>` can be commit-sha or tag to push
 
++ To force push,
+
+add `--force` long option.
+
+> [!WARNING]
+> git push --force will overwrite the push history (even though there are conflicts when pushing)
+
++ To safe force push, push iff there are NO conflicts, or abort the transaction if there are conflicts.
+
+add `--force-with-lease` long option.
+
 + To push to remote repo with rollup (i.e. consider many commits as one transcation, all commits are pushed if all commits are pushed successfully, or none commits are pushed otherwise,
 
 ```
-git push --atomic origin <remote-branch-to-push> <commitsS>
+git push --atomic origin <remote-branch-to-push> <commits>
 ```
 
 + first time push with upstream tracking
 
-add `-u` short option after `git push`
+add `-u` short option or `--set-upstream` long option after `git push`
+
+> [!NOTE]
+> Its the default configuration
+>
+> which no option are used.
+
++ To push all unpushed commits.
+
+Indicates with `-a` short option or `--all` log option NOT specifying specific tag.
+
++ To ONLY filter tags,
+
+specify `--tags` long option.
+
++ To ONLY filter branches
+
+specify `--branches` long option.
 
 ### tag
 #### list all tags
@@ -547,6 +591,12 @@ git rebase -i <branch-to-rebase>
 
 ```
 git rebase --continue
+```
+
++ To abort the rebase,
+
+```
+git rebase --abort
 ```
 
 ### show changes where your `HEAD` or branch pointers are pointing of local repo
@@ -804,9 +854,103 @@ git config user.email
 git config user.email 40843245@gm.nfu.edu.tw
 ```
 
-##### reference
-###### official docs
++ To specify the specific global configuration,
+
+specify `--global` long option after `git config`.
+
+Git uses global configuration.
+
+The global configuration is origin default configuration by default.
+
++ To look at configuration file (`.git/.gitconfig`),
+
+```
+git config --global --list
+```
+
++ To edit configuration file (`.git/.gitconfig`)
+
+```
+# 使用預設編輯器開啟
+git config --global --edit
+```
+
+### global configuration
+#### available global configuration
+| full key name | description |
+| :-- | :-- |
+| `core.editor` | which editor opened by Git |
+| `core.autocrlf` | when to do processing for conversion of new line symbol between Unix and Windows |
+| `commit.template` | template file used for commits |
+| `core.pager` | determines which pager is used when Git pages output such as log and diff |
+| `user.signingkey` | If you’re making signed annotated tags (as discussed in Signing Your Work), setting your GPG signing key as a configuration setting makes things easier.  |
+| `core.excludesfile` | patterns to ignore files when try to add tracking files (such as patterns in `.gitignore`) |
+| `help.autocorrect` | ways to auto correct or executed auto corrected command when trying to execute mistyped command. |
+| `color.ui` | determines the color when echo output to ui screen |
+| `color.*` | determines the color for the functionality (replace `*` with key name represents the functionality)   when echo output to ui screen |
+| `remote.<repo-name>.url` | Replace `<repo-name>` to name of remote repo. url of remote repo. |
+| `remote.<repo-name>.fetch` | Replace `<repo-name>` to name of remote repo. the ref (reference) of fetch |
+| `branch.<repo-name>.remote`| The default branch for pushing and pulling of the remote repo. |
+| `branch.<repo-name>.merge`| The default branch for merging of the remote repo. |
+| `alias.`<subsection>`| alias of `<subsection>` |
+| `diff.tool` | default tool used for diff |
+| `merge.tool` | default tool used for merge |
+| `mergetool.<tool>.path` | the path of `<tool>` tool used for merging. |
+| `credential.helper` | credential manageer tool |
+
+| full key name | value | description |
+| :-- | :-- | :-- |
+| `pull.rebase` | true | default behaviour `rebase` when try to pull. |
+| `init.defaultBranch` | master | cofigure the default branch to master branch when initialize of remote repo. | 
+| `commit.gpgsign` | true | enable sign with signature line-by-line when try to commit. |
+| `core.preloadindex` | true | preload index before loading the repo. |
+| `core.compression` | `<compression-level>` MUST be an integer between -1 to 9 | configuration the compression level to `<compression-level>` | 
+|
+#### full key name
+Full key name consists of 
+
++ `<section>.<variable>`
++ `<section>.<subsection>.<variable>`
+
+`<section>`: main header.
+
+`<subsection>`: subheader.
+
+`<variable>` : variable name to store entity.
+
+#### configuration
+Case 1: `<section>.<variable>`
+
+`<section>.<variable>` corresponds to
+
+```
+[<section>]
+    <variable> = <value>
+```
+
+Replace `<value>` with value to configure.
+
+Case 1: `<section>.<subsection>.<variable>`
+
+`<section>.<subsection>.<variable>` corresponds to
+
+```
+[<section> "<subsection>"]
+    <variable> = <value>
+```
+
+> [!WARNING]
+> `<section>` and `<variable>` are case-insensitive
+
+> [!WARNING]
+> `<subsection>` are case-insensitive
+
+> [!WARNING]
+> `<value>` are case-insensitive
+
+#### reference
+##### official docs
 + [1.6 Getting Started - First-Time Git Setup (Git)](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
-###### forum
+##### forum
 + [How to know the git username and email saved during configuration? (stackoverflow)](https://stackoverflow.com/questions/46941346/how-to-know-the-git-username-and-email-saved-during-configuration)
