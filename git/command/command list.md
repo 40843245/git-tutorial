@@ -278,6 +278,11 @@ or
 git reset HEAD
 ```
 
++ To specify git look at current commit,
+
+```
+git reset --hard HEAD
+```
 ##### reference
 + [Google Gemini's response -- How to unstage a file with git command?](https://g.co/gemini/share/ccc035f7447c)
   
