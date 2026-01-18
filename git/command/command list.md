@@ -469,6 +469,14 @@ explanation:
 + About commit all files and directory
   - [Google Gemini's response -- How to commit all changes (including files changes in submodule) with single git command?](https://g.co/gemini/share/273247a3caed)
 
+### pull from remote repo
++ To pull from remote repo
+
+```
+git pull
+```
+
+### push to remote
 ### remove all staged files
 + To remove all staged files.
 
@@ -476,7 +484,8 @@ explanation:
 git rm --cached -r
 ```
 ### push to remote repo
-#### push to remote repo
++ push to remote repo
+
 ```
 git push origin <remote-branch-to-push> <commits>
 ```
@@ -487,12 +496,15 @@ git push origin <remote-branch-to-push> <commits>
 
 `<commit>` can be commit-sha or tag to push
 
-#### push to remote repo with rollup
-To push to remote repo with rollup (i.e. consider many commits as one transcation, all commits are pushed if all commits are pushed successfully, or none commits are pushed otherwise,
++ To push to remote repo with rollup (i.e. consider many commits as one transcation, all commits are pushed if all commits are pushed successfully, or none commits are pushed otherwise,
 
 ```
 git push --atomic origin <remote-branch-to-push> <commitsS>
 ```
+
++ first time push with upstream tracking
+
+add `-u` short option after `git push`
 
 ### tag
 #### list all tags
