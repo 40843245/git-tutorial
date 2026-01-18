@@ -432,7 +432,7 @@ explanation:
   - [Google Gemini's response -- How to commit all changes (including files changes in submodule) with single git command?](https://g.co/gemini/share/273247a3caed)
 
 ### look at specific to test
-When you fail the test at present but you remember specific commit can pass the test, you can try to search good commit by biary search algorithm.
++ When you fail the test at present but you remember specific commit can pass the test, you can try to search good commit by biary search algorithm.
 
 ```
 git bisect start # start to try to search good commit by biary search algorithm.
@@ -626,6 +626,25 @@ git log --all
 For example, it may print
 
 <img width="442" alt="image" src="https://github.com/user-attachments/assets/c6928d4e-8230-45ad-8c06-a3de2cea6860" />
+
++ To shows the commit history for all branches graphically, you can combine these above options together
+
+```
+git log --graph --oneline --all
+```
+
+For example, it may print
+
+```
+$ git log --graph --oneline --all
+* 4b2e759 (HEAD -> master) 修改新問的問題
+| * 93a5a68 (refs/stash) WIP on master: adf499f Add: 增加詢問使用者名稱的功能
+|/|
+| * 36111ba index on master: adf499f Add: 增加詢問使用者名稱的功能
+|/
+* adf499f (feature/ask-name, conflict-test) Add: 增加詢問使用者名稱的功能
+* 777b53f Initial: 建立 C# 控制台專案基礎架構
+```
 
 ##### reference
 + [Google Gemini's response -- `git log`](https://g.co/gemini/share/ee46ccc9b2ad)
