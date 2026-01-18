@@ -66,8 +66,15 @@ Then initialize the local repo with following command
 git init
 ```
 
+### look at info of the repo
++ To look at info of the repo,
+
+```
+git remote <option>
+```
+
+It will look at specific info of the repo according to the provided option `<option>`
 ### look at status of the repo
-#### `status`
 + To look at status of the repo,
 
 ```
