@@ -66,6 +66,14 @@ Then initialize the local repo with following command
 git init
 ```
 
+### look at status of the repo
+#### `status`
+To look at status of the repo,
+
+```
+git status
+```
+
 ### clone from remote repo to local repo
 #### `clone`
 
@@ -422,7 +430,16 @@ explanation:
 
 + About commit all files and directory
   - [Google Gemini's response -- How to commit all changes (including files changes in submodule) with single git command?](https://g.co/gemini/share/273247a3caed)
-  
+
+### look at specific to test
+When you fail the test at present but you remember specific commit can pass the test, you can try to search good commit by biary search algorithm.
+
+```
+git bisect start # start to try to search good commit by biary search algorithm.
+git bisect bad # mark current commit as bad commit (commit which fails the test)
+git bisect good <good-commit-sha> # mark commit with <good-commit-sha> as good commit (commit which passes the test)
+```
+
 ### show changes where your `HEAD` or branch pointers are pointing of local repo
 #### `reflog`
 + To show changes where your `HEAD` or branch pointers are pointing of local repo
