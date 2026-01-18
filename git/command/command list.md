@@ -26,12 +26,12 @@ such as `clone`
 + To print the info of specific command on git command line
 
 ```
-git help <flag>
+git help <command> <option>
 ``` 
 
 where 
 
-`<flag>` are one or more flag which is available .
+`<command>` are one or more command which is available with option `<option>`.
 
 ##### examples
 ###### example 1
@@ -252,6 +252,21 @@ or
 git restore --staged --worktree
 ```
 
+### Remove tracked files
++　To remove all tracked files,
+
+```
+git rm --cached -r
+```
+
++　To remove all tracked specific files using regex,
+
+```
+git rm --cached -r <files-using-regex>
+```
+
+It will remove tracked files that are matched by regex `<files-using-regex>`.
+
 ##### reference
 + [Google Gemini's response -- How to unstage a file with git command?](https://g.co/gemini/share/ccc035f7447c)
 
@@ -295,7 +310,7 @@ git reset --hard HEAD
 git commit -m "rename CH2 to CH3"
 ```
 
-here `-m` flag means the commit description.
+here `-m` option means the commit description.
 
 + To commit the staged files
 
