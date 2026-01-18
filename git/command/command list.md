@@ -68,7 +68,7 @@ git init
 
 ### look at status of the repo
 #### `status`
-To look at status of the repo,
++ To look at status of the repo,
 
 ```
 git status
@@ -186,6 +186,13 @@ git branch new-branch <commit-sha>
 where 
 
 `<commit-sha>` is the old-SHA of the commit.
+
+### Look at file changes
++ To look at files changes,
+
+```
+git diff
+```
 
 ### stage one or more specific files
 #### `add`
