@@ -443,6 +443,27 @@ explanation:
 + About commit all files and directory
   - [Google Gemini's response -- How to commit all changes (including files changes in submodule) with single git command?](https://g.co/gemini/share/273247a3caed)
 
+### push to remote repo
+#### push to remote repo
+```
+git push --atomic origin <remote-branch-to-push> <commits>
+```
+
+```
+<commits> := <commit>+
+```
+
+
+`<commit>` can be commit-sha or tag to push
+
+#### push to remote repo with rollup
+To push to remote repo with rollup (i.e. consider many commits as one transcation, all commits are pushed if all commits are pushed successfully, or none commits are pushed otherwise,
+
+```
+git push --atomic origin <remote-branch-to-push> <commitsS>
+```
+
+
 ### look at specific to test
 + When you fail the test at present but you remember specific commit can pass the test, you can try to search good commit by biary search algorithm.
 
