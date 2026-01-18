@@ -443,16 +443,21 @@ explanation:
 + About commit all files and directory
   - [Google Gemini's response -- How to commit all changes (including files changes in submodule) with single git command?](https://g.co/gemini/share/273247a3caed)
 
+### remove all staged files
++ To remove all staged files.
+
+```
+git rm --cached -r
+```
 ### push to remote repo
 #### push to remote repo
 ```
-git push --atomic origin <remote-branch-to-push> <commits>
+git push origin <remote-branch-to-push> <commits>
 ```
 
 ```
 <commits> := <commit>+
 ```
-
 
 `<commit>` can be commit-sha or tag to push
 
@@ -463,6 +468,20 @@ To push to remote repo with rollup (i.e. consider many commits as one transcatio
 git push --atomic origin <remote-branch-to-push> <commitsS>
 ```
 
+### tag
+#### list all tags
++ To list all tags,
+
+```
+git tag
+```
+
+#### add specific tag to this unpushed commit
++ To add specific tag to this unpushed commit,
+
+```
+git tag <tag-name>
+```
 
 ### look at specific to test
 + When you fail the test at present but you remember specific commit can pass the test, you can try to search good commit by biary search algorithm.
@@ -471,6 +490,25 @@ git push --atomic origin <remote-branch-to-push> <commitsS>
 git bisect start # start to try to search good commit by biary search algorithm.
 git bisect bad # mark current commit as bad commit (commit which fails the test)
 git bisect good <good-commit-sha> # mark commit with <good-commit-sha> as good commit (commit which passes the test)
+```
+
+### rebase the branch
++ To rebase the branch,
+
+```
+git rebase <branch-to-rebase>
+```
+
++ To rebase the branch interactively,
+
+```
+git rebase -i <branch-to-rebase>
+```
+
++ To continue the rebase,
+
+```
+git rebase --continue
 ```
 
 ### show changes where your `HEAD` or branch pointers are pointing of local repo
@@ -683,6 +721,18 @@ $ git log --graph --oneline --all
 + [Google Gemini's response -- `git log`](https://g.co/gemini/share/ee46ccc9b2ad)
 + [Google Gemini's response -- What does the output of `git log` stands for?](https://g.co/gemini/share/1a063de40631)
 
+### list staged files
++ To list all staged files
+
+```
+git ls-files --stage
+```
+
++ To list all staged files under local directory,
+
+```
+git ls-files --stage <directory>
+```
 ### configuration
 #### `config`
 
