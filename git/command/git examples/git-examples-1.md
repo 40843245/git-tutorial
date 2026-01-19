@@ -722,3 +722,208 @@ Date:   Mon Jan 19 09:42:20 2026 +0800
     The demo illustrates conflicts occur when merge two branches.
 ```
 
++ To look at aliases we gave, we can simply filter the global configuration out (using `git config --global --list`) by filter `alias`  (using `grep alias`).
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global --list | grep alias
+alias.loglast=log -1 head
+```
+
++ This illustrates that untracked but changes files are same at same time in different switch and the consequent if NIT track the file.
+
+switch `feature/conflicts` branch,
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git checkout feature/conflicts
+Switched to branch 'feature/conflicts'
+```
+
+In `feature/conflicts` branch 
+
+we create an empty file `MyAwesomeApp/FileService.cs`
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ touch "MyAwesomeApp/FileService.cs"
+```
+
+open with notepad
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ notepad "MyAwesomeApp/FileService.cs"
+```
+
+and write something such as
+
+```
+public class FileService{
+
+}
+```
+
+Then we can know that in `feature/conflicts` branch and `master` branch, the untracked but changes files are same (by comparing echoed message using `git status` in two branches)
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git status
+On branch feature/conflicts
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        MyAwesomeApp/FileService.cs
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git checkout master
+Switched to branch 'master'
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        MyAwesomeApp/FileService.cs
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+> [!IMPORTANT]
+> Since we haven't tracked `MyAwesomeApp/FileService.cs` file in `feature/conflict` branch,
+>
+> the file changes will dispear if we switch to other branches.
+>
+> Same scenario applies to `master` branch.
+
++ To track untracked but changed files,
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git add .
+```
+
++ Then look at status again.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   MyAwesomeApp/FileService.cs
+```
+
++ Then commit the staged files.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git commit -m "Part 2.2: Try to make conflicts"
+[master 6e1c206] Part 2.2: Try to make conflicts
+ 1 file changed, 40 insertions(+)
+ create mode 100644 MyAwesomeApp/FileService.cs
+```
+
++ This illustrate why conflicts occur and how to resolve it.
+
+Switch to `feature/conflicts` branch and open ``
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git checkout feature/conflicts
+Switched to branch 'feature/conflicts'
+```
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git status
+On branch feature/conflicts
+nothing to commit, working tree clean
+```
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ touch "MyAwesomeApp/FileService.cs"
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ notepad "MyAwesomeApp/FileService.cs"
+```
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git status
+On branch feature/conflicts
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        MyAwesomeApp/FileService.cs
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git add .
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git status
+On branch feature/conflicts
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   MyAwesomeApp/FileService.cs
+
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git commit -m "Part 2.2.2: Try to make conflicts"
+[feature/conflicts c9b60f0] Part 2.2.2: Try to make conflicts
+ 1 file changed, 8 insertions(+)
+ create mode 100644 MyAwesomeApp/FileService.cs
+```
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+$ git checkout master
+Switched to branch 'master'
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ notepad "MyAwesomeApp/FileService.cs"
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git commit -m "Update: Main 分支的緊急改動"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   MyAwesomeApp/FileService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   MyAwesomeApp/FileService.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git add .
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   MyAwesomeApp/FileService.cs
+
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git commit -m "Update: Main 分支的緊急改動"
+[master 914161b] Update: Main 分支的緊急改動
+ 1 file changed, 1 insertion(+)
+
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git merge feature/conflicts
+Auto-merging MyAwesomeApp/FileService.cs
+CONFLICT (add/add): Merge conflict in MyAwesomeApp/FileService.cs
+Automatic merge failed; fix conflicts and then commit the result.
+
+```
