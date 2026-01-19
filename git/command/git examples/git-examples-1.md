@@ -4,10 +4,10 @@ Available at [GitLab remote repo](https://gitlab.com/codelover30/git-example-2)
 + To add a local repo at `D:\workspace\tutorial projects\Git\Git-example-2`
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 ~ (master)
+<user-name>@<device-name> MINGW64 ~ (master)
 $ cd "D:\workspace\tutorial projects\Git\Git-example-2"
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2
 $ git init
 Initialized empty Git repository in D:/workspace/tutorial projects/Git/Git-example-2/.git/
 ```
@@ -15,13 +15,13 @@ Initialized empty Git repository in D:/workspace/tutorial projects/Git/Git-examp
 + To create a C# project named `MyAwesomeApp` using console template,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ mkdir "MyAwesomeApp"
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ cd "MyAwesomeApp"
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
 $ dotnet new console
 The template "Console App" was created successfully.
 
@@ -33,7 +33,7 @@ Restore succeeded.
 + Ensure the C# project is successfull built.
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
 $ ls
 MyAwesomeApp.csproj  Program.cs  obj/
 ```
@@ -41,7 +41,7 @@ MyAwesomeApp.csproj  Program.cs  obj/
 + To open `MyAwesomeApp/Program.cs` with notepad.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
 $ notepad "Program.cs"
 ```
 
@@ -56,7 +56,7 @@ Save it and close the notepad.
 + To look at status of the local repo.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
 $ git status
 On branch master
 
@@ -72,14 +72,14 @@ nothing added to commit but untracked files present (use "git add" to track)
 + change back to root directory of local repo.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2/MyAwesomeApp (master)
 $ cd ..
 ```
 
 + Then look the status again,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 
@@ -99,14 +99,14 @@ You will find the fact that
 + Track all file changes and then stage them
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git add .
 ```
 
 + After tracking files, look at status again.
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 
@@ -126,7 +126,7 @@ Changes to be committed:
 + commit staged files with commit message `Part 0:Create empty console project in the solution`
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git commit -m "Part 0:Create empty console project in the solution"
 [master (root-commit) 53a09ef] Part 0:Create empty console project in the solution
  7 files changed, 739 insertions(+)
@@ -142,7 +142,7 @@ $ git commit -m "Part 0:Create empty console project in the solution"
 + After committing, look at status again,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -151,7 +151,7 @@ nothing to commit, working tree clean
 + After committing, look at log in one line,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 53a09ef (HEAD -> master) Part 0:Create empty console project in the solution
 ```
@@ -159,14 +159,14 @@ $ git log --oneline
 + To build a remote repo named `git-example-2` in username `codelover30` in GitLab,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git remote add origin https://gitlab.com/codelover30/git-example-2.git #建立使用者名為codelover30的遠端repo名為git-example-2
 ```
 
 + To look at the verbose of the remote repo,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git remote -v
 origin  https://gitlab.com/codelover30/git-example-2.git (fetch)
 origin  https://gitlab.com/codelover30/git-example-2.git (push)
@@ -175,21 +175,21 @@ origin  https://gitlab.com/codelover30/git-example-2.git (push)
 + To look at all created tags of local repo.
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git tag
 ```
 
 + To add a new tag named `v0.0.0` in local repo,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git tag v0.0.0
 ```
 
 + After adding new tag, look at all created tags of local repo.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git tag
 v0.0.0
 ```
@@ -197,7 +197,7 @@ v0.0.0
 + To push commits and tags to the remote repo atomically, 
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git push --atomic origin master v0.0.0
 Enumerating objects: 11, done.
 Counting objects: 100% (11/11), done.
@@ -225,7 +225,7 @@ To https://gitlab.com/codelover30/git-example-2.git
 + After pushing, look at log again.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 53a09ef (HEAD -> master, tag: v0.0.0, origin/master) Part 0:Create empty console project in the solution
 ```
@@ -235,7 +235,7 @@ Compare the echoed message at the first time we look at log and the second time.
 message echoed at the first time we look at log
  
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 53a09ef (HEAD -> master) Part 0:Create empty console project in the solution
 ```
@@ -243,7 +243,7 @@ $ git log --oneline
 message echoed at the second time we look at log
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 53a09ef (HEAD -> master, tag: v0.0.0, origin/master) Part 0:Create empty console project in the solution
 ```
@@ -257,7 +257,7 @@ We can know that
 + To create a new branch named `feature/ask-me` then switch branch
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git checkout -b feature/ask-me
 Switched to a new branch 'feature/ask-me'
 ```
@@ -265,10 +265,10 @@ Switched to a new branch 'feature/ask-me'
 + create `MyAwesomeApp/Program.cs` (if not exists0), then open `MyAwesomeApp/Program.cs` with notepad
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ touch "MyAwesomeApp/Program.cs"
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ notepad "MyAwesomeApp/Program.cs"
 ```
 
@@ -283,7 +283,7 @@ Console.WriteLine($"Hello, {name}!");
 + To look at status again,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git status
 On branch feature/ask-me
 Changes not staged for commit:
@@ -297,14 +297,14 @@ no changes added to commit (use "git add" and/or "git commit -a")
 + To track changed but not committed files and stage them,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git add .
 ```
 
 + After staging them, look at status again,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git status
 On branch feature/ask-me
 Changes to be committed:
@@ -315,7 +315,7 @@ Changes to be committed:
 + To commit staged file with commit message `Part 1: prompt user to enter the input`
 
  ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git commit -m " "
 [feature/ask-me 7518cf4] Part 1: prompt user to enter the input
  1 file changed, 3 insertions(+), 1 deletion(-)
@@ -324,7 +324,7 @@ $ git commit -m " "
 + After committing, look at status again.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git status
 On branch feature/ask-me
 nothing to commit, working tree clean
@@ -333,7 +333,7 @@ nothing to commit, working tree clean
 + After committing, look at log again (third time).
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git log --oneline
 7518cf4 (HEAD -> feature/ask-me) Part 1: prompt user to enter the input
 53a09ef (tag: v0.0.0, origin/master, master) Part 0:Create empty console project in the solution
@@ -342,14 +342,14 @@ $ git log --oneline
 + To add tag named `v1.0.0`.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git tag v1.0.0
 ```
 
 + After adding tag named v1.0.0, look at created new tag.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git tag
 v0.0.0
 v1.0.0
@@ -358,7 +358,7 @@ v1.0.0
 + To push commit and tag `v1.0.0` to `feature/ask-me` branch of remote repo atomatically,  
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git push --atomic origin feature/ask-me v1.0.0
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
@@ -378,7 +378,7 @@ To https://gitlab.com/codelover30/git-example-2.git
 + After pushing, look at status again,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git status
 On branch feature/ask-me
 nothing to commit, working tree clean
@@ -387,7 +387,7 @@ nothing to commit, working tree clean
 + After pushing, look at log in one line (fourth time),
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git log --oneline
 7518cf4 (HEAD -> feature/ask-me, tag: v1.0.0, origin/feature/ask-me) Part 1: prompt user to enter the input
 53a09ef (tag: v0.0.0, origin/master, master) Part 0:Create empty console project in the solution
@@ -396,7 +396,7 @@ $ git log --oneline
 + To pull from `feature/ask-me` of remote repo in GitLab,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git pull https://gitlab.com/codelover30/git-example-2 feature/ask-me
 warning: redirecting to https://gitlab.com/codelover30/git-example-2.git/
 From https://gitlab.com/codelover30/git-example-2
@@ -409,7 +409,7 @@ Already up to date.
 (that is, the default branch for pushing is `feature/ask-me` branch in remote repo)
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git branch --set-upstream-to=origin/feature/ask-me feature/ask-me
 branch 'feature/ask-me' set up to track 'origin/feature/ask-me'.
 ```
@@ -417,7 +417,7 @@ branch 'feature/ask-me' set up to track 'origin/feature/ask-me'.
 + To create a new branch named feature/conflicts and then switch branch,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/ask-me)
 $ git checkout -b feature/conflicts
 Switched to a new branch 'feature/conflicts'
 ```
@@ -425,7 +425,7 @@ Switched to a new branch 'feature/conflicts'
 + open `MyAwesomeApp/Program.cs` with notepad 
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ notepad "MyAwesomeApp/Program.cs"
 ```
 
@@ -446,7 +446,7 @@ And close it.
 + Look at status again,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Changes not staged for commit:
@@ -461,14 +461,14 @@ changes added to commit (use "git add" and/or "git commit -a")
 + To track file changes and staged them,
   
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git add .
 ```
 
 + After tracking these files, look at status again.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Changes to be committed:
@@ -480,7 +480,7 @@ Changes to be committed:
 + To commit these staged but uncommited files,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git commit -m "Part 2: try to make conflicts to demo"
 [feature/conflicts e584d97] Part 2: try to make conflicts to demo
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -490,7 +490,7 @@ $ git commit -m "Part 2: try to make conflicts to demo"
 + After committing, look at status again,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 nothing to commit, working tree clean
@@ -499,7 +499,7 @@ nothing to commit, working tree clean
 + After committing, look at log in one line again (fifth times),
 
 ````
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git log --oneline
 e584d97 (HEAD -> feature/conflicts) Part 2: try to make conflicts to demo
 7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
@@ -509,14 +509,14 @@ e584d97 (HEAD -> feature/conflicts) Part 2: try to make conflicts to demo
 + To create a new tag named `v2.0.0`,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git tag v2.0.0
 ```
 
 + After creating the new tag named `v2.0.0`, look at created tags.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git tag
 v0.0.0
 v1.0.0
@@ -526,7 +526,7 @@ v2.0.0
 + To push the commit to remote repo in GitLab atomically,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git push --atomic origin feature/conflicts
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
@@ -545,7 +545,7 @@ To https://gitlab.com/codelover30/git-example-2.git
 + After pushing, look at status again.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 nothing to commit, working tree clean
@@ -554,7 +554,7 @@ nothing to commit, working tree clean
 + After pushing, look at log in one line again (sixth time).
  
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git log --oneline
 e584d97 (HEAD -> feature/conflicts, tag: v2.0.0, origin/feature/conflicts) Part 2: try to make conflicts to demo
 7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
@@ -566,7 +566,7 @@ e584d97 (HEAD -> feature/conflicts, tag: v2.0.0, origin/feature/conflicts) Part 
 it is need to switch branch to `master` branch.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git checkout master
 Switched to branch 'master'
 ```
@@ -574,7 +574,7 @@ Switched to branch 'master'
 Then use `git merge` with `--no-ff` option to merge from current working branch (here is `master` branch) to specific branch (here is `feature/conflicts` branch)
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git merge --no-ff feature/conflicts
 hint: Waiting for your editor to close the file...
 ```
@@ -584,7 +584,7 @@ Then Git opens `.git/MERGE_MSG` to prompt us to fill the merge message since we 
 After that, you will see
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git merge --no-ff feature/conflicts
 Merge made by the 'ort' strategy.
  MyAwesomeApp/Program.cs | 4 +++-
@@ -594,7 +594,7 @@ Merge made by the 'ort' strategy.
 + After merging, look at status,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -603,7 +603,7 @@ nothing to commit, working tree clean
 + After merging, look at log in one line (seventh time)
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
 e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
@@ -620,14 +620,14 @@ combining them together, we will know that there is a merge from `feature/confli
 + Then we set the global configuration `color.ui` to true, which echos the output with multiple color.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global color.ui true
 ```
 
 + After that, we can see that Git prints the log with multiple color.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
 e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
@@ -640,14 +640,14 @@ e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try t
 + Then we set the global configuration `color.ui` to false, which echos the output without multiple color.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global color.ui false
 ```
 
 + After that, we can see that Git prints the log without multiple color.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git log --oneline
 8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
 e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
@@ -660,14 +660,14 @@ e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try t
 + Then we set the global configuration `color.ui` to default value, which echos the output with multiple color.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global color.ui true
 ```
 
 + To enable Git auto correct the command we entered globally (which affects everywhere),
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global help.autocorrect true
 ```
 
@@ -676,7 +676,7 @@ $ git config --global help.autocorrect true
 Git will assume you to enter some command according to fuzzy search alogarithm.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git lg --oneline
 WARNING: You called a Git command named 'lg', which does not exist.
 Continuing under the assumption that you meant 'log'.
@@ -703,14 +703,14 @@ Date:   Mon Jan 19 09:42:20 2026 +0800
 + Give an alias `log -1 head` as `loglast` is more readable for us,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global alias.loglast "log -1 head"
 ```
 
 + Then we can look at last commit of log by typing `git loglast`.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git loglast
 commit 8ca3b4be227f6d025ba85471abd182a56105359b (HEAD -> master)
 Merge: 53a09ef e584d97
@@ -725,7 +725,7 @@ Date:   Mon Jan 19 09:42:20 2026 +0800
 + To look at aliases we gave, we can simply filter the global configuration out (using `git config --global --list`) by filter `alias`  (using `grep alias`).
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global --list | grep alias
 alias.loglast=log -1 head
 ```
@@ -735,7 +735,7 @@ alias.loglast=log -1 head
 switch `feature/conflicts` branch,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git checkout feature/conflicts
 Switched to branch 'feature/conflicts'
 ```
@@ -745,14 +745,14 @@ In `feature/conflicts` branch
 we create an empty file `MyAwesomeApp/FileService.cs`
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ touch "MyAwesomeApp/FileService.cs"
 ```
 
 open with notepad
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ notepad "MyAwesomeApp/FileService.cs"
 ```
 
@@ -767,7 +767,7 @@ public class FileService{
 Then we can know that in `feature/conflicts` branch and `master` branch, the untracked but changes files are same (by comparing echoed message using `git status` in two branches)
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Untracked files:
@@ -776,11 +776,11 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git checkout master
 Switched to branch 'master'
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 Untracked files:
@@ -800,14 +800,14 @@ nothing added to commit but untracked files present (use "git add" to track)
 + To track untracked but changed files,
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git add .
 ```
 
 + Then look at status again.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 Changes to be committed:
@@ -818,7 +818,7 @@ Changes to be committed:
 + Then commit the staged files.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git commit -m "Part 2.2: Try to make conflicts"
 [master 6e1c206] Part 2.2: Try to make conflicts
  1 file changed, 40 insertions(+)
@@ -830,13 +830,13 @@ $ git commit -m "Part 2.2: Try to make conflicts"
 Switch to `feature/conflicts` branch.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git checkout feature/conflicts
 Switched to branch 'feature/conflicts'
 ```
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 nothing to commit, working tree clean
@@ -845,12 +845,12 @@ nothing to commit, working tree clean
 In `feature/conflicts` branch, create `MyAwesomeApp/FileService.cs` file and open it with notepad.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ touch "MyAwesomeApp/FileService.cs"
 ```
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ notepad "MyAwesomeApp/FileService.cs"
 ```
 
@@ -870,7 +870,7 @@ namespace MyAwesomeApp{
 Look at status to ensure the file is saved sucessfully.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Untracked files:
@@ -883,12 +883,12 @@ nothing added to commit but untracked files present (use "git add" to track)
 Then stage it
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git add .
 ```
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Changes to be committed:
@@ -899,7 +899,7 @@ Changes to be committed:
 and commit staged file with commit message `Part 2.2.2: Try to make conflicts`
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git commit -m "Part 2.2.2: Try to make conflicts"
 [feature/conflicts c9b60f0] Part 2.2.2: Try to make conflicts
  1 file changed, 8 insertions(+)
@@ -909,7 +909,7 @@ $ git commit -m "Part 2.2.2: Try to make conflicts"
 After that, switch to `master` branch.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git checkout master
 Switched to branch 'master'
 ```
@@ -917,7 +917,7 @@ Switched to branch 'master'
 In `master` branch, create `MyAwesomeApp/FileService.cs` file and open it with notepad.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ notepad "MyAwesomeApp/FileService.cs"
 ```
 
@@ -971,14 +971,14 @@ namespace MyAwesomeApp{
 To stage the file changes.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git add .
 ```
 
 Ensure that the file is staged.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 Changes to be committed:
@@ -989,7 +989,7 @@ Changes to be committed:
 Commit the staged files.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git commit -m "Update: Main 分支的緊急改動"
 [master 914161b] Update: Main 分支的緊急改動
  1 file changed, 1 insertion(+)
@@ -998,7 +998,7 @@ $ git commit -m "Update: Main 分支的緊急改動"
 After that, try to merge from `feature/conflicts` branch to `master` branch, and we will see there are conflicts in `MyAwesomeApp/FileService.cs`.
 
 ```
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+<user-name>@<device-name> MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git merge feature/conflicts
 Auto-merging MyAwesomeApp/FileService.cs
 CONFLICT (add/add): Merge conflict in MyAwesomeApp/FileService.cs
