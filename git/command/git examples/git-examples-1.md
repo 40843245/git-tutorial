@@ -663,3 +663,25 @@ e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try t
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git config --global color.ui true
 ```
+
++ To enable Git auto correct the command we entered globally (which affects everywhere),
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global help.autocorrect true
+```
+
++ After auto correcting functionality are enabled, when we try to enter an unexist Git command, 
+
+Git will assume you to enter some command according to fuzzy search alogarithm.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git lg --oneline
+WARNING: You called a Git command named 'lg', which does not exist.
+Continuing under the assumption that you meant 'log'.
+8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
+e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
+7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
+53a09ef (tag: v0.0.0, origin/master, origin/HEAD) Part 0:Create empty console project in the solution
+```
