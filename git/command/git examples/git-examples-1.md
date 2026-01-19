@@ -616,3 +616,43 @@ we will see `(HEAD -> master)` indicating there is a merge from other branch to 
 and `Merge branch 'feature/conflicts'` indicating there is a merge from `feature/conflicts` branch,
 
 combining them together, we will know that there is a merge from `feature/conflicts` branch to `master` branch.
+
++ Then we set the global configuration `color.ui` to true, which echos the output with multiple color.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global color.ui true
+```
+
++ After that, we can see that Git prints the log with multiple color.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git log --oneline
+8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
+e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
+7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
+53a09ef (tag: v0.0.0, origin/master, origin/HEAD) Part 0:Create empty console project in the solution
+```
+
+<img width="595" height="107" alt="image" src="https://github.com/user-attachments/assets/d92075a3-826f-4e20-abb6-d155b79f0584" />
+
++ Then we set the global configuration `color.ui` to false, which echos the output without multiple color.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global color.ui false
+```
+
++ After that, we can see that Git prints the log without multiple color.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git log --oneline
+8ca3b4b (HEAD -> master) Merge branch 'feature/conflicts'
+e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try to make conflicts to demo
+7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
+53a09ef (tag: v0.0.0, origin/master, origin/HEAD) Part 0:Create empty console project in the solution
+```
+
+<img width="575" height="106" alt="image" src="https://github.com/user-attachments/assets/25115e26-3b49-49ee-8a75-cc677deebd90" />
