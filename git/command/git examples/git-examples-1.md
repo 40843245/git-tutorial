@@ -685,3 +685,40 @@ e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try t
 7518cf4 (tag: v1.0.0, origin/feature/ask-me, feature/ask-me) Part 1: prompt user to enter the input
 53a09ef (tag: v0.0.0, origin/master, origin/HEAD) Part 0:Create empty console project in the solution
 ```
+
++ To look at last commit of log (tenth time)
+
+```
+$ git log -1 head
+commit 8ca3b4be227f6d025ba85471abd182a56105359b (HEAD -> master)
+Merge: 53a09ef e584d97
+Author: jayhuang820 <jay.huang@solventosoft.com.tw>
+Date:   Mon Jan 19 09:42:20 2026 +0800
+
+    Merge branch 'feature/conflicts'
+
+    The demo illustrates conflicts occur when merge two branches.
+```
+
++ Give an alias `log -1 head` as `loglast` is more readable for us,
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global alias.loglast "log -1 head"
+```
+
++ Then we can look at last commit of log by typing `git loglast`.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git loglast
+commit 8ca3b4be227f6d025ba85471abd182a56105359b (HEAD -> master)
+Merge: 53a09ef e584d97
+Author: jayhuang820 <jay.huang@solventosoft.com.tw>
+Date:   Mon Jan 19 09:42:20 2026 +0800
+
+    Merge branch 'feature/conflicts'
+
+    The demo illustrates conflicts occur when merge two branches.
+```
+
