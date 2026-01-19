@@ -827,7 +827,7 @@ $ git commit -m "Part 2.2: Try to make conflicts"
 
 + This illustrate why conflicts occur and how to resolve it.
 
-Switch to `feature/conflicts` branch and open ``
+Switch to `feature/conflicts` branch.
 
 ```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
@@ -842,14 +842,34 @@ On branch feature/conflicts
 nothing to commit, working tree clean
 ```
 
+In `feature/conflicts` branch, create `MyAwesomeApp/FileService.cs` file and open it with notepad.
+
 ```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ touch "MyAwesomeApp/FileService.cs"
+```
 
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ notepad "MyAwesomeApp/FileService.cs"
 ```
 
+write these and close it.
+
+```
+using System;
+using System.IO;
+
+namespace MyAwesomeApp{
+    public class FileService{
+        public required string FilePath {get;init;}
+  }
+}
+```
+
+Look at status to ensure the file is saved sucessfully.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
@@ -858,18 +878,27 @@ Untracked files:
         MyAwesomeApp/FileService.cs
 
 nothing added to commit but untracked files present (use "git add" to track)
+```
 
+Then stage it
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git add .
+```
 
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git status
 On branch feature/conflicts
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   MyAwesomeApp/FileService.cs
+```
 
+and commit staged file with commit message `Part 2.2.2: Try to make conflicts`
 
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git commit -m "Part 2.2.2: Try to make conflicts"
 [feature/conflicts c9b60f0] Part 2.2.2: Try to make conflicts
@@ -877,53 +906,156 @@ $ git commit -m "Part 2.2.2: Try to make conflicts"
  create mode 100644 MyAwesomeApp/FileService.cs
 ```
 
+After that, switch to `master` branch.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (feature/conflicts)
 $ git checkout master
 Switched to branch 'master'
+```
 
+In `master` branch, create `MyAwesomeApp/FileService.cs` file and open it with notepad.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ notepad "MyAwesomeApp/FileService.cs"
+```
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
-$ git commit -m "Update: Main 分支的緊急改動"
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   MyAwesomeApp/FileService.cs
+write these and close it.
 
-no changes added to commit (use "git add" and/or "git commit -a")
+```
+using System;
+using System.IO;
 
-userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   MyAwesomeApp/FileService.cs
+namespace MyAwesomeApp{
+<<<<<<< HEAD
+    ///處理檔案的Utility class。
+    public class FileService{
+        public required string FilePath {get;init;}
+        public void CreateFile(){
+            try
+            {
+              // 1. 取得檔案所在的目錄路徑
+              string directoryPath = Path.GetDirectoryName(FilePath);
 
-no changes added to commit (use "git add" and/or "git commit -a")
+              // 2. 如果目錄不存在，建立所有層級的目錄
+              if (!string.IsNullOrEmpty(directoryPath))
+              {
+                 Directory.CreateDirectory(directoryPath);
+              }
+	      File.Create(FilePath);	
+            }
+            catch (Exception e)
+            {
+               Console.WriteLine("The process failed: {0}", e.ToString());
+            }
+            finally{
+	       Console.WriteLine("Successfully try to create file.");
+            }
+      }
+      public void OverwriteFile(string text){
+         this.CreateFile();
+         File.WriteAllText(FilePath,text,Encoding.UTF8);
+      }  
+      public void WriteText(string text){
+         if(!File.Exists()){
+ 	    this.CreateFile();
+	 }
 
+         File.WriteAllText(FilePath,text,Encoding.UTF8);
+      }
+  }
+}
+```
+
+To stage the file changes.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git add .
+```
 
+Ensure that the file is staged.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git status
 On branch master
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   MyAwesomeApp/FileService.cs
+```
 
+Commit the staged files.
 
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git commit -m "Update: Main 分支的緊急改動"
 [master 914161b] Update: Main 分支的緊急改動
  1 file changed, 1 insertion(+)
+```
 
+After that, try to merge from `feature/conflicts` branch to `master` branch, and we will see there are conflicts in `MyAwesomeApp/FileService.cs`.
+
+```
 userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
 $ git merge feature/conflicts
 Auto-merging MyAwesomeApp/FileService.cs
 CONFLICT (add/add): Merge conflict in MyAwesomeApp/FileService.cs
 Automatic merge failed; fix conflicts and then commit the result.
+```
+
+When we open `MyAwesomeApp/FileService.cs`, we will see
 
 ```
+using System;
+using System.IO;
+
+namespace MyAwesomeApp{
+<<<<<<< HEAD
+    ///處理檔案的Utility class。
+    public class FileService{
+        public required string FilePath {get;init;}
+        public void CreateFile(){
+            try
+            {
+              // 1. 取得檔案所在的目錄路徑
+              string directoryPath = Path.GetDirectoryName(FilePath);
+
+              // 2. 如果目錄不存在，建立所有層級的目錄
+              if (!string.IsNullOrEmpty(directoryPath))
+              {
+                 Directory.CreateDirectory(directoryPath);
+              }
+	      File.Create(FilePath);	
+            }
+            catch (Exception e)
+            {
+               Console.WriteLine("The process failed: {0}", e.ToString());
+            }
+            finally{
+	       Console.WriteLine("Successfully try to create file.");
+            }
+      }
+      public void OverwriteFile(string text){
+         this.CreateFile();
+         File.WriteAllText(FilePath,text,Encoding.UTF8);
+      }  
+      public void WriteText(string text){
+         if(!File.Exists()){
+ 	    this.CreateFile();
+	 }
+
+         File.WriteAllText(FilePath,text,Encoding.UTF8);
+      }
+=======
+    public class FileService{
+        public required string FilePath {get;init;}
+>>>>>>> feature/conflicts
+  }
+}
+```
+
+Here, texts between `<<<<<<< HEAD` and `=======` indicates they are added in current change but NOT appear in previous one change.
+
+While texts between `=======` and `>>>>>>> feature/conflicts` indicates they are added in incoming change in `feature/conflicts` branch but is deleted in current change.
