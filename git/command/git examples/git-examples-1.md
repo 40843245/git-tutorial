@@ -656,3 +656,10 @@ e584d97 (tag: v2.0.0, origin/feature/conflicts, feature/conflicts) Part 2: try t
 ```
 
 <img width="575" height="106" alt="image" src="https://github.com/user-attachments/assets/25115e26-3b49-49ee-8a75-cc677deebd90" />
+
++ Then we set the global configuration `color.ui` to default value, which echos the output with multiple color.
+
+```
+userJay30@ASUS-B1400CBNGW MINGW64 /d/workspace/tutorial projects/Git/Git-example-2 (master)
+$ git config --global color.ui true
+```
