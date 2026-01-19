@@ -862,17 +862,28 @@ Git uses global configuration.
 
 The global configuration is origin default configuration by default.
 
-+ To look at configuration file (`.git/.gitconfig`),
++ To look at global configuration file (`~/.gitconfig`),
 
 ```
 git config --global --list
 ```
 
-+ To edit configuration file (`.git/.gitconfig`)
++ To edit configuration file (`~/.gitconfig`)
 
 ```
-# 使用預設編輯器開啟
 git config --global --edit
+```
+
++ To look at local configuration file (`.git/.gitconfig` of the local repo),
+
+```
+git config --local --list
+```
+
++ To edit configuration file (`.git/.gitconfig` of the local repo)
+
+```
+git config --local --edit
 ```
 
 ### global configuration
@@ -898,14 +909,14 @@ git config --global --edit
 | `mergetool.<tool>.path` | the path of `<tool>` tool used for merging. |
 | `credential.helper` | credential manageer tool |
 
-| full key name | value | description |
+| full key name | available value | description |
 | :-- | :-- | :-- |
-| `pull.rebase` | true | default behaviour `rebase` when try to pull. |
-| `init.defaultBranch` | master | cofigure the default branch to master branch when initialize of remote repo. | 
-| `commit.gpgsign` | true | enable sign with signature line-by-line when try to commit. |
-| `core.preloadindex` | true | preload index before loading the repo. |
-| `core.compression` | `<compression-level>` MUST be an integer between -1 to 9 | configuration the compression level to `<compression-level>` | 
-|
+| `pull.rebase` | boolean value | If true, default behaviour `rebase` when try to pull. |
+| `init.defaultBranch` |  existing branch name | If `master`, cofigure the default branch to `master` branch when initialize of remote repo. | 
+| `commit.gpgsign` | boolean value | If true, enable sign with signature line-by-line when try to commit. |
+| `core.preloadindex` | boolean value | If true, preload index before loading the repo. |
+| `core.compression` | `<compression-level>`. MUST be an integer between -1 to 9 | configuration the compression level to `<compression-level>` | 
+
 #### full key name
 Full key name consists of 
 
@@ -954,3 +965,6 @@ Case 1: `<section>.<subsection>.<variable>`
 
 ##### forum
 + [How to know the git username and email saved during configuration? (stackoverflow)](https://stackoverflow.com/questions/46941346/how-to-know-the-git-username-and-email-saved-during-configuration)
+
+#### examples
+See [example 1 and its demo repo](https://github.com/40843245/git-tutorial/blob/main/git/command/git%20examples/git-examples-1.md) for example and explanations.
